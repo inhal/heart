@@ -15,37 +15,33 @@ body {
 }
 
 .heart {
-  background:rgb(207, 105, 112);
+  position: relative;
   width: 100px;
-  height: 100px;
-  transform: rotate(-45deg);
+  height: 90px;
+  /* transform: rotate(-45deg); */
   animation: heart 3s infinite 1s;
 }
 @keyframes heart {
   50% {
-    transform: scale(1.2) rotate(-45deg);
+    transform: scale(1.2);
   }
 }
 
-.heart:before {
+.heart:before,
+.heart:after {
   position: absolute;
-  content: '';
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
   background:rgb(207, 105, 112);
-  background-color: rgb(207, 105, 112);
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  left: 0px;
-  top: -125px;
+  border-radius: 50px 50px 0 0;
+  transform-origin: 0 100%;
+  transform: rotate(-45deg);
 }
 .heart:after {
-  position:absolute;
-  content: '';
-  background:rgb(207, 105, 112);
-  background-color: rgb(207, 105, 112);
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  left: 125px;
-  top: 0px;
+  left: 0;
+  transform-origin :100% 100%;
+  transform: rotate(45deg);
 }
